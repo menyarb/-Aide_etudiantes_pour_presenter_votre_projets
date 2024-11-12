@@ -1,0 +1,72 @@
+<!-- Table Basic -->
+<div class="row" id="basic-table">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header"><h4 class="card-title">Liste Condidat</h4></div>
+    
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Image</th>
+              <th>Nom</th>
+              <th>Prenom</th>
+              <th>Adress</th>
+              <th>Email</th>
+              <th>telphone</th>
+              <th>Login</th>
+              <th>mot de passe</th>
+              <th>role</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let condidat of listecondidat">
+              <td>
+                {{condidat.idCondidat}}
+                   </td>
+                   <td>
+                    <img src="{{condidat.image}}" style="width: 50px;" alt="" >
+                   </td>
+              <td>
+           {{condidat.nom}}
+              </td>
+              <td>
+                {{condidat.prenom}}
+              </td>
+              <td>
+                {{condidat.adress}}
+              </td>
+              <td>
+                {{condidat.email}}
+              </td>
+              <td>
+                {{condidat.tel}}
+              </td>
+              <td>
+                {{condidat.login}}
+              </td>
+              <td>
+                {{condidat.mdp}}
+              </td>
+              <td>
+                {{condidat.role}}
+              </td>
+             <td>
+              <button type="button" class="btn btn-info btn-sm" (click)=" updateCondidat(condidat.idCondidat) ">
+                Edit
+              </button>
+              <button  class="btn btn-danger btn-sm" (click)=" deletecondidat(condidat.idCondidat)" >
+                Delete
+              </button> </td>
+            </tr>
+         
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ Table Basic -->

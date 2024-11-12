@@ -1,0 +1,210 @@
+<section id="multiple-column-form">
+  <div class="row match-height">
+    <div class="col-12">
+    
+        <h4 class="card-title">Ajouter Admin</h4>
+        <div class="card-body">
+          <form class="form"  
+           >
+           <div class="col-md-12 col-12">
+           <div class="media">
+            <a href="javascript:void(0);" class="mr-25">
+              <img
+              [src]="avatarImage"
+              class="rounded mr-50"
+              alt="profile image"
+              height="76"
+              width="80"
+            
+              
+              />
+            </a>
+            
+            <!-- upload and reset button -->
+            <div class="media-body mt-75 ml-1">
+              <button (click)="file.click()" for="account-upload" class="btn btn-sm btn-primary mb-75 mr-75" rippleEffect>
+                Upload
+              </button>
+              <input type="file" #file id="account-upload" hidden accept="image/*" (change)="uploadImage($event)"   [(ngModel)]="currentAdmin.image"/>
+              <button class="btn btn-sm btn-outline-secondary mb-75" rippleEffect>Reset</button>
+              
+          </div></div>
+          </div>
+            <div class="row">
+              <div class="col-md-6 col-12">
+                <div class="form-group">
+                 <label for="first-name-column">nom</label>
+                  <input
+                    type="text"
+                    id="nom"
+                    class="form-control"
+                    placeholder="nom"
+                    [(ngModel)]="currentAdmin.nom"
+                    name="nom"
+                    required
+                    minlength="4"
+                    #nomVar="ngModel"
+                    [ngClass]="{'is-invalid': nomVar.touched && !nomVar.valid}"
+                    
+                    />
+                  <div class="invalid-feedback">
+                    <span *ngIf="nomVar.errors?.required">
+                      Entrez votre nom
+                    </span>
+
+                    <span *ngIf="nomVar.errors?.minlength">
+                      Minimun 4 charactéres
+                    </span>
+                  </div>
+
+
+                </div>
+              </div>
+              <div class="col-md-6 col-12">
+                <div class="form-group">
+                  <label for="last-name-column">prenom</label>
+                  <input
+                    type="text"
+                    id="prenom"
+                    class="form-control"
+                    placeholder="prenom"
+                    [(ngModel)]="currentAdmin.prenom"
+                    name="prenom" 
+                    required
+                    maxlength="20"
+                    #prenomVar="ngModel"
+                    [ngClass]="{'is-invalid': prenomVar.touched && !prenomVar.valid}"
+                  />
+                  <div class="invalid-feedback">
+                    <span *ngIf="nomVar.errors?.required">
+                      Entrez votre prenom
+                    </span>
+
+                    <span *ngIf="nomVar.errors?.maxlength">
+                    Max 20 charactéres
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-12">
+                <div class="form-group">
+                  <label for="city-column">email</label>
+                  <input type="email"
+                   id="email" 
+                   class="form-control" 
+                   placeholder="email" 
+                   [(ngModel)]="currentAdmin.email"
+                   name="email" 
+                   required
+                   email
+                   #emailVar="ngModel"
+                   [ngClass]="{'is-invalid': emailVar.touched && !emailVar.valid}"
+                   />
+                   <div class="invalid-feedback">
+                    <span *ngIf="emailVar.errors?.required">
+                      Entrez votre email
+                    </span>
+
+                    <span *ngIf="emailVar.errors?.email">
+                      L'E-Mail n'est pas valide
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              
+              <div class="col-md-6 col-12">
+                <div class="form-group">
+                  <label for="country-floating">login</label>
+                  <input
+                    type="text"
+                    id="login"
+                    class="form-control"
+                    [(ngModel)]="currentAdmin.login"
+                    placeholder="login"
+                    name="login"
+                    required
+                    maxlength="20"
+                    #loginVar="ngModel"
+                    [ngClass]="{'is-invalid': loginVar.touched && !loginVar.valid}"
+                  />
+                  <div class="invalid-feedback">
+                    <span *ngIf="nomVar.errors?.required">
+                      Entrez votre login
+                    </span>
+
+                    <span *ngIf="nomVar.errors?.maxlength">
+                      Max 10 charactéres
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-12">
+                <div class="form-group">
+                  <label for="company-column">mot de passe</label>
+                  <input
+                    type="password"
+                    id="mode de passe"
+                    class="form-control"
+                    [(ngModel)]="currentAdmin.mdp"
+                    name="mot de passe"
+                    placeholder="mot de passe"
+                    required
+                    minlength="4"
+                    #mdpVar="ngModel"
+                    [ngClass]="{'is-invalid': mdpVar.touched && !mdpVar.valid}"
+                  />
+                  <div class="invalid-feedback">
+                    <span *ngIf="mdpVar.errors?.required">
+                      Entrez votre mot de passe
+                    </span>
+
+                    <span *ngIf="mdpVar.errors?.minlength">
+                      Minimun 4 charactéres
+                    </span>
+                  </div>
+                </div>
+              </div>
+         
+              <div class="col-md-6 col-12">
+                <div class="form-group">
+                 <label for="first-name-column">role</label>
+                  <input
+                    type="text"
+                    id="role"
+                    class="form-control"
+                    placeholder="Admin"
+                    [(ngModel)]="currentAdmin.role"
+                    name="role"
+                    required
+                    minlength="1"
+                    #roleVar="ngModel"
+                    [ngClass]="{'is-invalid': roleVar.touched && !roleVar.valid}"
+                    
+                    />
+                  <div class="invalid-feedback">
+                    <span *ngIf="roleVar.errors?.required">
+                      Entrez votre role
+                    </span>
+
+                    <span *ngIf="roleVar.errors?.minlength">
+                      Minimun 1 charactéres
+                    </span>
+                  </div>
+
+
+                </div>
+              </div>
+         
+                <div class="col-12">
+                  <button type=" reset" rippleEffect class="btn btn-primary mr-1">Annuler</button>
+                  <button type="submit" (click)="updateAdmin()" class="btn btn-primary">Modifier</button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+      </div>
+    </div>
+  </section>
+

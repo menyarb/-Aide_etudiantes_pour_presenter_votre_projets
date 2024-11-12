@@ -1,0 +1,72 @@
+<div class="content-wrapper">
+  <div class="content-body">
+    <!-- Invoice List -->
+    <section class="invoice-list-wrapper">
+      <div class="card">
+        <div class="card-header"><h4 class="card-title">Liste Offre</h4></div>
+        <!-- Invoice List Header -->
+        <div class="row">
+          
+          
+
+        <!-- Invoice List Table -->
+     
+       <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Image</th>  
+            <th>Titre</th>
+            <th>description</th>
+            <th>type</th>
+            <th>categorie</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let offre of offre">
+            <td>
+              {{offre.idOffre}}
+              </td>
+              <td>
+                <img src="{{offre .image}}" style="width : 100px;
+                height : 100px;" >
+               </td>
+            <td>
+         {{offre.titre}}
+            </td>
+         
+            
+            <td>
+              {{offre.description}}
+            </td>
+            <td>
+              {{offre.Categorie}}
+            </td>
+            
+            <td>
+              {{offre.type}}
+            </td>
+           
+            
+             
+                <button type="button" class="btn btn-info btn-sm"(click)=" updateOffre(offre.idOffre) " >
+                  Edit
+                </button>
+                <button  class="btn btn-danger btn-sm" (click)="deleteoffre(offre.idOffre)"  >
+                  Delete
+                </button> 
+           
+            
+          
+          </tr>
+       
+          
+        </tbody>
+      </table>
+       </div></div>
+       
+    </section>
+    <!--/ Invoice List -->
+  </div>
+</div>

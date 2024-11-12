@@ -1,0 +1,118 @@
+<div class="content-wrapper">
+  <div class="content-body">
+    <!-- content-header component -->
+    <app-content-header [contentHeader]="contentHeader"></app-content-header>
+
+    <!-- account setting page -->
+    <section id="page-account-settings">
+      <div class="row nav-vertical d-flex">
+        <div class="col-md-3 mb-2 mb-md-0">
+          <ul ngbNav #navVertical="ngbNav" class="nav nav-pills flex-column nav-left">
+            <li class="nav-item" ngbNavItem>
+              <a
+                ngbNavLink
+                class="nav-link d-flex py-75"
+                id="account-pill-general"
+                data-toggle="pill"
+                href="#account-vertical-general"
+                aria-expanded="true"
+              >
+                <i data-feather="user" class="font-medium-3 mr-1"></i>
+                <span class="font-weight-bold">General</span>
+              </a>
+              <ng-template ngbNavContent>
+                <div class="card">
+                  <div class="card-body">
+                    <!-- header media -->
+                    <div class="media">
+                      <a href="javascript:void(0);" class="mr-25">
+                        <img
+                          [src]="userDetails.image"
+                          class="rounded mr-50"
+                          alt="profile image"
+                          height="76"
+                          width="80"
+                        
+                        />
+                      </a>
+                   
+                      <!--/ upload and reset button -->
+                    </div>
+                    <!--/ header media -->
+
+                    <!-- form -->
+                    <form class="validate-form mt-2">
+                      <div class="row">
+                        <div class="col-12 col-sm-6">
+                          <div class="form-group">
+                            <label for="account-username">nom</label>
+                            <input
+                              type="text"
+                              value="{{userDetails.nom}}"
+                              class="form-control"
+                              id="account-username"
+                              name="nom"
+                              placeholder="nom"
+                            />
+                          </div>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                          <div class="form-group">
+                            <label for="account-name">prenom</label>
+                            <input
+                              type="text"
+                              value="{{userDetails.prenom}}"
+                              class="form-control"
+                              id="account-name"
+                              name="prenom"
+                              placeholder="prenom"
+                            />
+                          </div>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                          <div class="form-group">
+                            <label for="account-e-mail">E-mail</label>
+                            <input
+                              type="email"
+                              value="{{userDetails.email}}"
+                              class="form-control"
+                              id="account-e-mail"
+                              name="email"
+                              placeholder="Email"
+                            />
+                          </div>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                          <div class="form-group">
+                            <label for="account-company">login</label>
+                            <input
+                              type="text"
+                              value="{{userDetails.login}}"
+                              class="form-control"
+                              id="account-company"
+                              name="login"
+                              placeholder="login"
+                            />
+                          </div>
+                        </div>
+                        
+                     
+                      </div>
+                    </form>
+                    <!--/ form -->
+                  </div>
+                </div>
+              </ng-template>
+            </li>
+            
+           
+
+            
+          </ul>
+        </div>
+        <div [ngbNavOutlet]="navVertical" class="col-12 col-md-9"></div>
+      </div>
+    </section>
+    <!--/ account setting page -->
+  </div>
+</div>
